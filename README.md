@@ -40,6 +40,8 @@ sudo apt-get install software-properties-common
 
 2. Update the configuration with the following settings:
 
+For `[server]`:  
+
     ```ini
     [server]
     user = mysql
@@ -51,7 +53,7 @@ sudo apt-get install software-properties-common
     lc-messages-dir = /usr/share/mysql
     bind-address = 127.0.0.1
     query_cache_size = 16M
-    log_error = /var/log/mysql/error.log
+    log_error = /var/log/mysql/error.log```
 
     [mysqld]
     innodb-file-format=barracuda
@@ -65,7 +67,7 @@ sudo apt-get install software-properties-common
     default-character-set = utf8mb4
     ```
 
-3. Save and exit the editor.
+4. Save and exit the editor.
 
 ### Step 4: Restart MariaDB
 
