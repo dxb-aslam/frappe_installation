@@ -1,7 +1,3 @@
-Here’s a documentation-style write-up for your GitHub repository:
-
----
-
 ## Frappe Installation Guide
 
 ### Step 1: Install Required Packages
