@@ -1,96 +1,84 @@
-# frappe_installation
+Here’s a documentation-style write-up for your GitHub repository:
 
-`sudo apt-get install git;  
-sudo apt-get install python3-dev python3-setuptools python3-pip virtualenv python3.10-venv;  
-sudo apt-get install software-properties-common;  
-sudo apt install mariadb-server;  
-sudo mysql_secure_installation;`  
+---
 
-`sudo apt-get install libmysqlclient-dev;  
-sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf`  
+## Frappe Installation Guide
 
-`[server]  
-user = mysql  
-pid-file = /run/mysqld/mysqld.pid  
-socket = /run/mysqld/mysqld.sock  
-basedir = /usr  
-datadir = /var/lib/mysql  
-tmpdir = /tmp  
-lc-messages-dir = /usr/share/mysql  
-bind-address = 127.0.0.1  
-query_cache_size = 16M  
-log_error = /var/log/mysql/error.log`  
+### Step 1: Install Required Packages
 
-`[mysqld]
-innodb-file-format=barracuda
-innodb-file-per-table=1
-innodb-large-prefix=1
-character-set-client-handshake = FALSE
-character-set-server = utf8mb4
-collation-server = utf8mb4_unicode_ci`      
- 
-`[mysql]
-default-character-set = utf8mb4`
+To begin, install the necessary packages for setting up Frappe on your system:
 
+```bash
+sudo apt-get install git
+sudo apt-get install python3-dev python3-setuptools python3-pip virtualenv python3.10-venv
+sudo apt-get install software-properties-common
+```
 
-`sudo service mysql restart;
-sudo apt-get install redis-server;
-sudo apt install curl;
-curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash;
-source ~/.profile;
-nvm install 20.16.0;
-sudo apt-get install npm;
-sudo npm install -g yarn;
-sudo apt-get install xvfb libfontconfig wkhtmltopdf;
-sudo -H pip3 install frappe-bench;
-bench init sandbox_uae --frappe-branch version-15;`
+### Step 2: Install and Configure MariaDB
 
-`bench get-app erpnext --branch version-15;
-bench get-app hrms --branch version-15;
-bench new-site blueline-cloud.sandbox-uae.dxbitz.com --install-app hrms;`
+1. Install MariaDB server:
 
-bench config dns_multitenant on
+    ```bash
+    sudo apt install mariadb-server
+    ```
 
-sudo bench setup production -;
-bench restart;
-sudo bench setup production -;
+2. Secure your MariaDB installation by running:
 
-sudo chmod o+x /home/-;
+    ```bash
+    sudo mysql_secure_installation
+    ```
 
+3. Install the MySQL client development libraries:
 
+    ```bash
+    sudo apt-get install libmysqlclient-dev
+    ```
 
-sudo apt install snapd;
-sudo snap install core; sudo snap refresh core;
+### Step 3: Configure MariaDB for Frappe
 
-sudo apt-get remove certbot;
+1. Open the MariaDB server configuration file:
 
-sudo snap install --classic certbot;
-sudo ln -s /snap/bin/certbot /usr/bin/certbot;
+    ```bash
+    sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf
+    ```
 
-sudo certbot --nginx;
+2. Update the configuration with the following settings:
 
+    ```ini
+    [server]
+    user = mysql
+    pid-file = /run/mysqld/mysqld.pid
+    socket = /run/mysqld/mysqld.sock
+    basedir = /usr
+    datadir = /var/lib/mysql
+    tmpdir = /tmp
+    lc-messages-dir = /usr/share/mysql
+    bind-address = 127.0.0.1
+    query_cache_size = 16M
+    log_error = /var/log/mysql/error.log
 
-sudo certbot renew --dry-run;
+    [mysqld]
+    innodb-file-format=barracuda
+    innodb-file-per-table=1
+    innodb-large-prefix=1
+    character-set-client-handshake = FALSE
+    character-set-server = utf8mb4
+    collation-server = utf8mb4_unicode_ci      
 
-sudo nano /etc/iptables/rules.v4
+    [mysql]
+    default-character-set = utf8mb4
+    ```
 
-sudo iptables-restore < /etc/iptables/rules.v4
+3. Save and exit the editor.
 
-sudo iptables -L INPUT
+### Step 4: Restart MariaDB
 
+Finally, restart the MariaDB service to apply the changes:
 
+```bash
+sudo systemctl restart mariadb
+```
 
-SPAWN ERROR:
-bench setup socketio
+---
 
-bench setup supervisor
-
-bench setup redis
-
-sudo supervisorctl reload
-
-sudo service supervisor stop all
-
-sudo service supervisor start all
-
-sudo service supervisor restart
+This documentation will guide users through installing and configuring Frappe with MariaDB on their system. You can include this in your GitHub repository's README or a separate installation guide file.
