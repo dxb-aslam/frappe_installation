@@ -209,6 +209,59 @@ After creating your site and installing the necessary apps, set up the bench for
 
     Again, replace `[user]` with your username.
 
+### Step 15: Enable Multitenant Setup
+
+To enable multitenancy in Frappe, configure the bench with the following command:
+
+```bash
+bench config dns_multitenant on;
+```
+
+This command allows multiple sites to be hosted on the same bench instance.
+
+### Step 16: Set Up SSL with Let's Encrypt
+
+To secure your sites with SSL using Let's Encrypt, follow these steps:
+
+1. Install Snapd:
+
+    ```bash
+    sudo apt install snapd;
+    ```
+
+2. Install and refresh the core Snap package:
+
+    ```bash
+    sudo snap install core;
+    sudo snap refresh core;
+    ```
+
+3. Remove any existing Certbot installation:
+
+    ```bash
+    sudo apt-get remove certbot;
+    ```
+
+4. Install Certbot using Snap:
+
+    ```bash
+    sudo snap install --classic certbot;
+    ```
+
+5. Create a symbolic link for Certbot:
+
+    ```bash
+    sudo ln -s /snap/bin/certbot /usr/bin/certbot;
+    ```
+
+6. Obtain and install the SSL certificate using Certbot for Nginx:
+
+    ```bash
+    sudo certbot --nginx;
+    ```
+
+This process will guide you through the steps to configure SSL for your sites.
+
 ### Conclusion
 
 You have now successfully installed all the necessary components to set up Frappe on your system. You can proceed with creating a new Frappe site or configuring your development environment as needed.
