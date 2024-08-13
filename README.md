@@ -148,6 +148,41 @@ Finally, install the Frappe Bench CLI tool using pip3:
 sudo -H pip3 install frappe-bench
 ```
 
+### Step 11: Create a New Bench
+
+To create a new bench, use the following command, specifying the Frappe branch you want to use:
+
+```bash
+bench init [bench_name] --frappe-branch version-15
+```
+
+Replace `[bench_name]` with the desired name for your bench.
+
+### Step 12: Install ERPNext and HRMS
+
+After initializing the bench, install the ERPNext and HRMS apps using the following commands:
+
+```bash
+bench get-app erpnext --branch version-15
+bench get-app hrms --branch version-15
+```
+
+### Step 13: Create a New Site
+
+Navigate to your bench directory:
+
+```bash
+cd [bench_name]
+```
+
+Then, create a new site and install ERPNext and HRMS with the following command:
+
+```bash
+bench new-site [site_name] --install-app hrms
+```
+
+Replace `[site_name]` with the desired name for your site. This command will create the site and install both ERPNext and HRMS along with it.
+
 ### Conclusion
 
 You have now successfully installed all the necessary components to set up Frappe on your system. You can proceed with creating a new Frappe site or configuring your development environment as needed.
