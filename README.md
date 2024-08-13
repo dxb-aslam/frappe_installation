@@ -261,7 +261,3 @@ To secure your sites with SSL using Let's Encrypt, follow these steps:
     ```
 
 This process will guide you through the steps to configure SSL for your sites.
-
-### Conclusion
-
-You have now successfully installed all the necessary components to set up Frappe on your system. You can proceed with creating a new Frappe site or configuring your development environment as needed.
