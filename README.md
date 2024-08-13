@@ -7,7 +7,7 @@ To begin, install the necessary packages for setting up Frappe on your system:
 ```bash
 sudo apt-get update
 sudo apt-get install git
-sudo apt-get install python3-dev python3-setuptools python3-pip virtualenv python3.10-venv
+sudo apt-get install python3-dev python3-setuptools python3-pip virtualenv python3.11-venv
 sudo apt-get install software-properties-common
 ```
 
