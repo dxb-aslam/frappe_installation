@@ -190,7 +190,7 @@ After creating your site and installing the necessary apps, set up the bench for
 1. Set up production:
 
     ```bash
-    sudo bench setup production [user];
+    sudo bench setup production [user]
     ```
 
     Replace `[user]` with your username.
@@ -198,13 +198,13 @@ After creating your site and installing the necessary apps, set up the bench for
 2. Restart the bench to apply the production settings:
 
     ```bash
-    bench restart;
+    bench restart
     ```
 
 3. Adjust the permissions to ensure the correct access:
 
     ```bash
-    sudo chmod o+x /home/[user];
+    sudo chmod o+x /home/[user]
     ```
 
     Again, replace `[user]` with your username.
@@ -214,7 +214,7 @@ After creating your site and installing the necessary apps, set up the bench for
 To enable multitenancy in Frappe, configure the bench with the following command:
 
 ```bash
-bench config dns_multitenant on;
+bench config dns_multitenant on
 ```
 
 This command allows multiple sites to be hosted on the same bench instance.
@@ -226,38 +226,38 @@ To secure your sites with SSL using Let's Encrypt, follow these steps:
 1. Install Snapd:
 
     ```bash
-    sudo apt install snapd;
+    sudo apt install snapd
     ```
 
 2. Install and refresh the core Snap package:
 
     ```bash
-    sudo snap install core;
-    sudo snap refresh core;
+    sudo snap install core
+    sudo snap refresh core
     ```
 
 3. Remove any existing Certbot installation:
 
     ```bash
-    sudo apt-get remove certbot;
+    sudo apt-get remove certbot
     ```
 
 4. Install Certbot using Snap:
 
     ```bash
-    sudo snap install --classic certbot;
+    sudo snap install --classic certbot
     ```
 
 5. Create a symbolic link for Certbot:
 
     ```bash
-    sudo ln -s /snap/bin/certbot /usr/bin/certbot;
+    sudo ln -s /snap/bin/certbot /usr/bin/certbot
     ```
 
 6. Obtain and install the SSL certificate using Certbot for Nginx:
 
     ```bash
-    sudo certbot --nginx;
+    sudo certbot --nginx
     ```
 
 This process will guide you through the steps to configure SSL for your sites.
