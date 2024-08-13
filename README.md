@@ -30,6 +30,7 @@ sudo apt-get install software-properties-common
     sudo apt-get install libmysqlclient-dev
     ```
 
+
 ### Step 3: Configure MariaDB for Frappe
 
 1. Open the MariaDB server configuration file:
@@ -38,10 +39,10 @@ sudo apt-get install software-properties-common
     sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf
     ```
 
-2. Update the configuration with the following settings:
-
-For `[server]`:  
-
+2. **Update the Configuration**:
+   
+   - **For the `[server]` and `[mysqld]` sections**: Copy and paste the following settings into their respective sections:
+   
     ```ini
     [server]
     user = mysql
@@ -54,9 +55,7 @@ For `[server]`:
     bind-address = 127.0.0.1
     query_cache_size = 16M
     log_error = /var/log/mysql/error.log
-    ```
-For `[mysqld]`:
-    ```ini
+
     [mysqld]
     innodb-file-format=barracuda
     innodb-file-per-table=1
@@ -65,13 +64,15 @@ For `[mysqld]`:
     character-set-server = utf8mb4
     collation-server = utf8mb4_unicode_ci
     ```
-Then at the end of the file add:
+
+   - **At the end of the file**, add the following section:
+
     ```ini
     [mysql]
     default-character-set = utf8mb4
     ```
 
-4. Save and exit the editor.
+3. Save and exit the editor.
 
 ### Step 4: Restart MariaDB
 
