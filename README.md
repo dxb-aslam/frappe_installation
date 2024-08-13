@@ -6,10 +6,10 @@ sudo apt-get install software-properties-common;
 sudo apt install mariadb-server;
 sudo mysql_secure_installation;`
 
-sudo apt-get install libmysqlclient-dev;
-sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf
+`sudo apt-get install libmysqlclient-dev;
+sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf`
 
-[server]
+`[server]
 user = mysql
 pid-file = /run/mysqld/mysqld.pid
 socket = /run/mysqld/mysqld.sock
@@ -30,10 +30,10 @@ character-set-server = utf8mb4
 collation-server = utf8mb4_unicode_ci      
  
 [mysql]
-default-character-set = utf8mb4
+default-character-set = utf8mb4`
 
 
-sudo service mysql restart;
+`sudo service mysql restart;
 sudo apt-get install redis-server;
 sudo apt install curl;
 curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash;
@@ -43,11 +43,11 @@ sudo apt-get install npm;
 sudo npm install -g yarn;
 sudo apt-get install xvfb libfontconfig wkhtmltopdf;
 sudo -H pip3 install frappe-bench;
-bench init sandbox_uae --frappe-branch version-15;
+bench init sandbox_uae --frappe-branch version-15;`
 
-bench get-app erpnext --branch version-15;
+`bench get-app erpnext --branch version-15;
 bench get-app hrms --branch version-15;
-bench new-site blueline-cloud.sandbox-uae.dxbitz.com --install-app hrms;
+bench new-site blueline-cloud.sandbox-uae.dxbitz.com --install-app hrms;`
 
 bench config dns_multitenant on
 
