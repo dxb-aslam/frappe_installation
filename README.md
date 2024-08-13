@@ -183,6 +183,32 @@ bench new-site [site_name] --install-app hrms
 
 Replace `[site_name]` with the desired name for your site. This command will create the site and install both ERPNext and HRMS along with it.
 
+### Step 14: Set Up Production
+
+After creating your site and installing the necessary apps, set up the bench for production with the following commands:
+
+1. Set up production:
+
+    ```bash
+    sudo bench setup production [user];
+    ```
+
+    Replace `[user]` with your username.
+
+2. Restart the bench to apply the production settings:
+
+    ```bash
+    bench restart;
+    ```
+
+3. Adjust the permissions to ensure the correct access:
+
+    ```bash
+    sudo chmod o+x /home/[user];
+    ```
+
+    Again, replace `[user]` with your username.
+
 ### Conclusion
 
 You have now successfully installed all the necessary components to set up Frappe on your system. You can proceed with creating a new Frappe site or configuring your development environment as needed.
