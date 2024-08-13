@@ -151,7 +151,3 @@ sudo -H pip3 install frappe-bench
 ### Conclusion
 
 You have now successfully installed all the necessary components to set up Frappe on your system. You can proceed with creating a new Frappe site or configuring your development environment as needed.
-
----
-
-This documentation provides a complete guide for installing Frappe along with all necessary dependencies. You can append this to the previous steps in your GitHub repository documentation.
