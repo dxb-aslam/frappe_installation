@@ -25,7 +25,8 @@ lc-messages-dir = /usr/share/mysql
 bind-address = 127.0.0.1
 query_cache_size = 16M
 log_error = /var/log/mysql/error.log
-
+```
+```bash
 [mysqld]
 innodb-file-format=barracuda
 innodb-file-per-table=1
