@@ -90,25 +90,10 @@ bench config dns_multitenant on
 
 ```bash
 sudo apt install snapd
-```
-
-```bash
 sudo snap install core
 sudo snap refresh core
-```
-
-```bash
 sudo apt-get remove certbot
-```
-
-```bash
 sudo snap install --classic certbot
-```
-
-```bash
 sudo ln -s /snap/bin/certbot /usr/bin/certbot
-```
-
-```bash
 sudo certbot --nginx
 ```
