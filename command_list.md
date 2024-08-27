@@ -1,3 +1,4 @@
+Install and Setup Requirements
 
 ```bash
 sudo apt-get update
@@ -10,8 +11,10 @@ sudo apt-get install libmysqlclient-dev
 sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf
 ```
 
-```ini
+Update Config
+
 [server]
+```ini
 user = mysql
 pid-file = /run/mysqld/mysqld.pid
 socket = /run/mysqld/mysqld.sock
@@ -23,8 +26,8 @@ bind-address = 127.0.0.1
 query_cache_size = 16M
 log_error = /var/log/mysql/error.log
 ```
-```bash
 [mysqld]
+```bash
 innodb-file-format=barracuda
 innodb-file-per-table=1
 innodb-large-prefix=1
