@@ -3,7 +3,7 @@ Install and Setup Requirements
 ```bash
 sudo apt-get update
 sudo apt-get install git
-sudo apt-get install python3-dev python3-setuptools python3-pip virtualenv python3.11-venv
+sudo apt-get install python3-dev python3-setuptools python3-pip virtualenv python3.10-venv
 sudo apt-get install software-properties-common
 sudo apt install mariadb-server
 sudo mysql_secure_installation
@@ -43,7 +43,6 @@ default-character-set = utf8mb4
 
 ```bash
 sudo systemctl restart mariadb
-sudo apt install python3.10-venv
 sudo apt-get install redis-server
 sudo apt install curl
 curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
