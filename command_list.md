@@ -9,7 +9,6 @@ sudo apt install mariadb-server
 sudo mysql_secure_installation
 sudo apt-get install libmysqlclient-dev
 sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf
-sudo apt install python3.10-venv
 ```
 
 Update Config
@@ -44,6 +43,7 @@ default-character-set = utf8mb4
 
 ```bash
 sudo systemctl restart mariadb
+sudo apt install python3.10-venv
 sudo apt-get install redis-server
 sudo apt install curl
 curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
