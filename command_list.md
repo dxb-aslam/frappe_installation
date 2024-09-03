@@ -48,7 +48,7 @@ sudo apt-get install redis-server
 sudo apt install curl
 curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
 source ~/.profile
-nvm install 20.16.0
+nvm install 18
 sudo apt-get install npm
 sudo npm install -g yarn
 sudo apt-get install xvfb libfontconfig wkhtmltopdf
