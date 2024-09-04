@@ -7,7 +7,7 @@ To begin, install the necessary packages for setting up Frappe on your system:
 ```bash
 sudo apt-get update
 sudo apt-get install git
-sudo apt-get install python3-dev python3-setuptools python3-pip virtualenv python3.11-venv
+sudo apt-get install python3-dev python3-setuptools python3-pip virtualenv python3.10-venv
 sudo apt-get install software-properties-common
 ```
 
@@ -113,10 +113,10 @@ sudo apt install curl
     source ~/.profile
     ```
 
-3. Install Node.js version 20.16.0 using NVM:
+3. Install Node.js version 18 using NVM:
 
     ```bash
-    nvm install 20.16.0
+    nvm install 18
     ```
 
 ### Step 8: Install npm and Yarn
