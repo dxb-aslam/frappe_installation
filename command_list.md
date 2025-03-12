@@ -2,22 +2,22 @@ Install and Setup Requirements
 
 ```bash
 sudo apt-get update
-sudo apt-get install git
-sudo apt-get install python3-dev python3-setuptools python3-pip virtualenv python3.10-venv
-sudo apt-get install software-properties-common
-sudo apt install mariadb-server
+sudo apt-get install -y git
+sudo apt-get install -y python3-dev python3-setuptools python3-pip virtualenv python3.10-venv
+sudo apt-get install -y software-properties-common
+sudo apt install -y mariadb-server
 sudo mysql_secure_installation
-sudo apt-get install libmysqlclient-dev
+sudo apt-get install -y libmysqlclient-dev
 sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf
 sudo systemctl restart mariadb
-sudo apt-get install redis-server
-sudo apt install curl
+sudo apt-get install -y redis-server
+sudo apt install -y curl
 curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
 source ~/.profile
 nvm install 18
-sudo apt-get install npm
+sudo apt-get install -y npm
 sudo npm install -g yarn
-sudo apt-get install xvfb libfontconfig wkhtmltopdf
+sudo apt-get install -y xvfb libfontconfig wkhtmltopdf
 sudo -H pip3 install frappe-bench
 ```
 
