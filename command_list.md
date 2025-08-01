@@ -20,8 +20,6 @@ sudo npm install -g yarn
 
 sudo apt-get remove --purge -y wkhtmltopdf
 sudo apt-get install -y xfonts-75dpi
-wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.5-1/wkhtmltox_0.12.5-1.bionic_amd64.deb
-sudo dpkg -i wkhtmltox_0.12.5-1.bionic_amd64.deb
 sudo apt-get install -f -y
 sudo -H pip3 install frappe-bench
 ```
