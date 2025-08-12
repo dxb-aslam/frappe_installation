@@ -11,19 +11,28 @@ This document summarizes the key performance optimizations done on the server (O
 
 ### 🧾 Changes Made Under `[mysqld]` Section:
 ```ini
-# ------------------------
-# Dxbitz ERP tuning start
-# ------------------------
-innodb_buffer_pool_size = 8G
-max_connections = 300
-max_allowed_packet = 256M
-tmp_table_size = 256M
-max_heap_table_size = 256M
+# InnoDB
+innodb_buffer_pool_size = 6G        # ~55% of RAM, keeps plenty for Frappe & OS
+innodb_buffer_pool_instances = 3    # 2GB each
 innodb_log_file_size = 512M
 innodb_flush_log_at_trx_commit = 2
-# ------------------------
-# Dxbitz ERP tuning end
-# ------------------------
+innodb_flush_method = O_DIRECT
+
+# Connections & memory
+max_connections = 150               # 300 is overkill for ERPNext; lowers per-conn memory usage
+max_allowed_packet = 128M           # 256M not needed unless importing huge docs
+tmp_table_size = 128M
+max_heap_table_size = 128M
+
+# Query cache (disable on modern MySQL/MariaDB)
+query_cache_type = 0
+query_cache_size = 0
+
+# Thread handling
+thread_cache_size = 50
+table_open_cache = 2048
+open_files_limit = 65535
+
 ```
 
 ### 🔄 After Editing:
